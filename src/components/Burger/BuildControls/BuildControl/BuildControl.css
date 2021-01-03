@@ -1,11 +1,13 @@
 .BuildControl{
     display: flex;
-    justify-content: space-between;
-    align-item: center;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     margin: 5px 0;
+    border: 2px solid red;
 }
 
-button{
+.BuildControl button{
     display: block;
     font: inherit;
     padding: 5px;
@@ -14,7 +16,7 @@ button{
     border: 1px solid #000000;
     cursor: pointer;
     outline: none;
-    border: 1px solid red;
+
 }
 
 .BuildControl button:disabled {
