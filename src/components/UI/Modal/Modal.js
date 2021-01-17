@@ -5,8 +5,9 @@ import Backdrop from '../Backdrop/Backdrop' ;
 class Modal extends Component {
 
     shouldComponentUpdate(nextProps, nextState, nextContext) {
+
             return nextProps.show !== this.props.show;
-            return nextProps.show !== this.props.show;
+
     }
     //we made sure that we didn't update [Order Summary] unnecessary,
     //now it update when we push "Order NOW" at first it updated everytime when we added item.
@@ -22,7 +23,6 @@ class Modal extends Component {
         return (
             <div>
                 <Backdrop show={this.props.show} clicked={this.props.modalClosed}/>
-
 
                 <div className="Modal"
                      style={{
