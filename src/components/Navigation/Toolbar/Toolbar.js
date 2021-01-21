@@ -13,7 +13,7 @@ const toolbar =(props) =>(
             <ToggleButton  clicked={props.drawerToggleClicked}/>
         </div>
 
-        <div className="LogoBar">
+        <div className="Logo">
             <Logo/>
         </div>
 

@@ -14,7 +14,7 @@ class Modal extends Component {
     //we do it in the [Modal] because in [BurgerBuilder] Modal controls [OrderSummary] component
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log("[Modal ] will update");
+
     }
 
     render() {
