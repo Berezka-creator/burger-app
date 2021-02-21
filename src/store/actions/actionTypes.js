@@ -10,4 +10,7 @@ export const PURCHASE_BURGER_START='PURCHASE_BURGER_START';
 //Redirect for submitting the order
 export const PURCHASE_INIT='PURCHASE_INIT';
 
-//
+//Actions for handling order's page
+export const FETCH_ORDERS_START='FETCH_ORDERS_START';
+export const FETCH_ORDERS_SUCCESS ='FETCH_ORDERS_SUCCESS';
+export const FETCH_ORDERS_FAIL='FETCH_ORDERS_FAIL';

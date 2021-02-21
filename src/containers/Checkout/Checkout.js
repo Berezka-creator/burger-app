@@ -17,10 +17,15 @@ class Checkout extends Component {
     }
 
     render(){
-        let summary = <Redirect to ='/'/>
+        //Redirect  to home page if no ingredients are loaded
+        let summary = <Redirect to ='/burger-app'/>
+
+        //If ingredients are available we will render summary
         if(this.props.ings) {
+            const purchasedRedirect = this.props.purchased ? <Redirect to='/burger-app' /> : null;
             summary=(
                 <div>
+                    {purchasedRedirect}
                     <CheckoutSummary
                         ingredients={this.props.ings}
                         checkoutContinued = {this.checkoutContinuedHandler}
@@ -32,7 +37,6 @@ class Checkout extends Component {
                     />
                 </div>
             );
-
         }
 
         return summary;
@@ -41,15 +45,11 @@ class Checkout extends Component {
 
 const mapStateToProps = state =>{
     return{
-        ings: state.ingredients,
-        price: state.totalPrice
+        ings: state.burgerBuilder.ingredients,
+        price: state.burgerBuilder.totalPrice,
+        purchased: state.orders.purchased
 
     }
 };
 
-const mapDispatchToProps = dispatch => {
-    return{
-        onInitPurchased:() => dispatch(actions.purchaseInit())
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Checkout);
+export default connect(mapStateToProps, null)(Checkout);

@@ -15,12 +15,6 @@ export const removeIngredient = (name) =>{
     };
 };
 
-export const setIngredients = (ingredients) => {
-    return{
-        type: actionTypes.SET_INGREDIENTS,
-        ingredients: ingredients
-    };
-};
 
 export const fetchIngredientsFailed = () => {
     return {
@@ -28,7 +22,17 @@ export const fetchIngredientsFailed = () => {
     }
 };
 
+//Internal action that will keep ingredients until initIngredients is ready
+export const setIngredients = (ingredients) => {
+    return{
+        type: actionTypes.SET_INGREDIENTS,
+        ingredients: ingredients
+    };
+};
+
+//Initially to load ingredients that we will use in BurgerBuilder
 export const initIngredients = () => {
+    //Fetch ingredients asynchronously  throw REDUX-THUNK method
     return dispatch => {
         axios.get('https://react-my-burger-1f756-default-rtdb.firebaseio.com/ingredients.json')
             .then(response => {

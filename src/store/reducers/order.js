@@ -17,6 +17,8 @@ const reducer = (state=initialState, action) => {
             return{
                 ...state,
                 loading: false,
+                purchased: true,
+                //immutably add order to the new array
                 orders: state.orders.concat(newOrder)
             };
 
@@ -30,7 +32,7 @@ const reducer = (state=initialState, action) => {
         case actionTypes.PURCHASE_BURGER_START:
             return{
                 ...state,
-                loading: true,
+                loading: true
             };
 
         case actionTypes.PURCHASE_INIT:
@@ -39,7 +41,27 @@ const reducer = (state=initialState, action) => {
                 purchased: false
             }
 
-        default:
+
+        case actionTypes.FETCH_ORDERS_START:
+            return {
+                ...state,
+                loading: true
+            };
+
+        case actionTypes.FETCH_ORDERS_SUCCESS:
+            return {
+                ...state,
+                orders: action.orders,
+                loading: false
+            };
+
+        case actionTypes.FETCH_ORDERS_FAIL:
+            return{
+                ...state,
+                loading: false
+            };
+
+            default:
             return state;
     };
 }
