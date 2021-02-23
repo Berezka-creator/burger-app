@@ -35,48 +35,6 @@ class BurgerBuilder extends Component{
         return  sum >0;
     }
 
-   /* addIngredientHandler=(type)=>{
-        const oldCount = this.props.ings[type];
-        const updatedCounted =oldCount+1;
-
-        const updatedIngredients ={
-            ...this.props.ings
-        };
-
-        updatedIngredients[type]=updatedCounted;
-
-        //update
-        const priceAddition=INGREDIENT_PRICES[type];
-
-        const oldPrice = this.state.totalPrice;
-        const newPrice=oldPrice+priceAddition;
-
-
-        this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
-        this.updatePurchaseState(updatedIngredients);
-    }*/
-
-   /* removeIngredientHandler=(type)=>{
-        const oldCount = this.state.ingredients[type];
-        if(oldCount <=0){
-            return;
-        }
-        const updatedCounted =oldCount-1;
-        const updatedIngredients ={
-            ...this.state.ingredients
-        };
-
-        updatedIngredients[type]=updatedCounted;
-
-        //update
-        const priceDeduction=INGREDIENT_PRICES[type];
-        const oldPrice = this.state.totalPrice;
-        const newPrice=oldPrice-priceDeduction;
-        this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
-        this.updatePurchaseState(updatedIngredients);
-
-    }*/
-
     purchaseHandler=()=>{
         this.setState({ purchasing: true});
     }
@@ -120,8 +78,8 @@ class BurgerBuilder extends Component{
             orderSummary =  <OrderSummary
                 ingredients={this.props.ings}
                 price={this.props.price}
-                purchaseCanceled={()=>this.purchaseCancelHandler()}
-                purchaseContinued={()=>this.purchaseContinueHandler()}/>;
+                purchaseCanceled={this.purchaseCancelHandler}
+                purchaseContinued={this.purchaseContinueHandler}/>;
 
         }
 
@@ -148,8 +106,7 @@ const mapStateToProps= state =>{
     return{
         ings: state.burgerBuilder.ingredients,
         price: state.burgerBuilder.totalPrice,
-        error: state.burgerBuilder.error,
-
+        error: state.burgerBuilder.error
     };
 }
 
