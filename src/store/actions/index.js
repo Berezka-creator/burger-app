@@ -11,4 +11,10 @@ export {
     purchaseInit,
     fetchOrders
 } from './order';
+export {
+    authStart,
+    authFailed,
+    authSuccess,
+    auth
+} from './auth';
 
