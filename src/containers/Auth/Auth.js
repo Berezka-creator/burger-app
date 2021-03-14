@@ -83,15 +83,11 @@ class Auth extends Component {
                 touched: true
             }
         };
-
         this.setState({controls: updatedControls});
-
-
         }
 
     submitHandler = (event) => {
         event.preventDefault();
-
         this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value);
     }
 
@@ -101,9 +97,9 @@ class Auth extends Component {
         });
     }
 
-
     render(){
         const formElementsArray = [];
+
         for (let key in this.state.controls) {
 
             formElementsArray.push({
@@ -131,10 +127,8 @@ class Auth extends Component {
                     <Button btnType="Success" >Submit</Button>
                 </form>
                 <Button
-                    clicked={this.switchAuthMadeHandler()}
+                    clicked={() => this.switchAuthMadeHandler()}
                     btnType="Danger" >SWITCH TO {this.state.isSignup ? 'SIGNIN' : 'SIGNUP'}</Button>
-
-
             </div>
         )
     };

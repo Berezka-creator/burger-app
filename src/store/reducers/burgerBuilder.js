@@ -6,7 +6,6 @@ const initialState={
     ingredients: null,
     totalPrice:4,
     error: false
-
 };
 
 const INGREDIENT_PRICES={
@@ -15,7 +14,6 @@ const INGREDIENT_PRICES={
     meat: 1.3,
     bacon: 0.7
 };
-
 
 const addIngredient = ( state, action ) => {
     const updatedIngredient = { [action.ingredientName]: state.ingredients[action.ingredientName] + 1 }
