@@ -1,13 +1,13 @@
 import * as actionTypes from '../actions/actionTypes';
 import * as actions from '../actions/index';
-import  { updateObject } from '../utility';
+import  { updateObject } from '../../shared/utility';
 
 const initialState = {
     token: null,
     userId: null,
     error: null,
     loading: false,
-    authRedirectPath: '/'
+    authRedirectPath: '/burger-app'
 };
 
 const authStart = (state, action) => {
