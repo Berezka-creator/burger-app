@@ -7,11 +7,11 @@ import Backdrop from "../../UI/Backdrop/Backdrop";
 
 
 
-const toolbar =(props) =>(
+const toolbar =(props) => (
     <header className={styles.Toolbar}>
-        <div>
-            <ToggleButton  clicked={props.drawerToggleClicked}/>
-        </div>
+       
+        <ToggleButton  clicked={props.drawerToggleClicked}/>
+       
 
         <div className={styles.Logo}>
             <Logo/>
@@ -22,6 +22,6 @@ const toolbar =(props) =>(
         </nav>
 
     </header>
-
 )
+
 export default toolbar;
