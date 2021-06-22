@@ -41,21 +41,21 @@ export const purchaseInit = () => {
     };
 };
 
-export const fetchOrderSuccess = (orders) =>{
+export const fetchOrdersSuccess = (orders) =>{
     return {
         type: actionTypes.FETCH_ORDERS_SUCCESS,
         orders: orders
     };
 };
 
-export const fetchOrderFail = (error) =>{
+export const fetchOrdersFail = (error) =>{
     return {
         type: actionTypes.FETCH_INGREDIENTS_FAILED,
         error: error
     };
 };
 
-export const fetchOrderStart = () => {
+export const fetchOrdersStart = () => {
     return {
         type: actionTypes.FETCH_ORDERS_START,
     };
@@ -64,7 +64,7 @@ export const fetchOrderStart = () => {
 //Const to run asynchronous code
 export const fetchOrders = (token, userId) => {
     return dispatch => {
-        dispatch(fetchOrderStart());
+        dispatch(fetchOrdersStart());
         const queryParams = '?auth='+token+'&orderBy="userId"&equalTo="' +userId + '"';
         axios.get('/orders.json'+ queryParams)
             .then(res => {
@@ -75,11 +75,11 @@ export const fetchOrders = (token, userId) => {
                         id: key
                     });
                 }
-                dispatch(fetchOrderSuccess(fetchedOrders));
+                dispatch(fetchOrdersSuccess(fetchedOrders));
 
             })
             .catch(err => {
-                dispatch(fetchOrderFail(err))
+                dispatch(fetchOrdersFail(err))
             });
     };
 };

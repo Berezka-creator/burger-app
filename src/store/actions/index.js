@@ -13,7 +13,7 @@ export {
 } from './order';
 export {
     authStart,
-    authFailed,
+    authFail,
     authSuccess,
     auth,
     logout,

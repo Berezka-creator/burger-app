@@ -17,11 +17,11 @@ class Checkout extends Component {
 
     render(){
         //Redirect  to home page if no ingredients are loaded
-        let summary = <Redirect to ='/burger-app'/>
+        let summary = <Redirect to ='/'/>
 
         //If ingredients are available we will render summary
         if(this.props.ings) {
-            const purchasedRedirect = this.props.purchased ? <Redirect to='/burger-app' /> : null;
+            const purchasedRedirect = this.props.purchased ? <Redirect to='/' /> : null;
             summary=(
                 <div>
                     {purchasedRedirect}
