@@ -143,7 +143,7 @@ class ContactData extends Component {
             });
         }
         let form = (
-            <form onSubmit={this.orderHandler}>
+            <form  onSubmit={this.orderHandler}>
                 {formElementsArray.map(formElement => (
                     <Input
                         key={formElement.id}
@@ -163,6 +163,7 @@ class ContactData extends Component {
         }
         return (
             <div className={styles.ContactData}>
+                <a id="form-checkout">Here</a>
                 <h4>Enter your Contact Data</h4>
                 {form}
             </div>
