@@ -163,8 +163,8 @@ class ContactData extends Component {
         }
         return (
             <div className={styles.ContactData}>
-                <a id="form-checkout">Here</a>
-                <h4>Enter your Contact Data</h4>
+    
+                <h4 id="contact-form">Enter your Contact Data</h4>
                 {form}
             </div>
         );

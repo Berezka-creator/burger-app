@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './CheckoutSummary.module.css';
 import Burger from '../../Burger/Burger';
 import Button from '../../UI/Button/Button';
+import { HashLink as Link } from 'react-router-hash-link';
+
 
 const checkoutSummary =(props)=>{
     return(
@@ -16,7 +18,7 @@ const checkoutSummary =(props)=>{
             <Button
                 btnType="Success"
                 clicked={props.checkoutContinued}>
-                    <a href="#">CONTINUE</a></Button>
+                    <Link to="/checkout#contact-form">CONTINUE</Link></Button>
         </div>
     );
 
