@@ -1,6 +1,6 @@
 {
   "name": "burger-bulider",
-  "homepage": "http://berezka-creator.github.io/",
+  "homepage": "http://berezka-creator.github.io/burger-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
