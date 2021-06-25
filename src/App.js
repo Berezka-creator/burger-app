@@ -31,8 +31,8 @@ class App extends Component {
         let routes=(
             <Switch>
                 <Route path="/auth" component={Auth} />
-                <Route path="/" exact component={BurgerBuilder} />
-                <Redirect to = "/" />
+                <Route path="/burger-app" exact component={BurgerBuilder} />
+                <Redirect to = "/burger-app" />
             </Switch>
     );
         if (this.props.isAuthenticated) {
@@ -42,8 +42,8 @@ class App extends Component {
                     <Route path="/orders" component={asyncOrders} />
                     <Route path="/logout" component={Logout} />
                     <Route path="/auth" component={asyncAuth} />
-                    <Route path="/" exact component={BurgerBuilder} />
-                    <Redirect to = "/" />
+                    <Route path="/burger-app" exact component={BurgerBuilder} />
+                    <Redirect to = "/burger-app" />
                 </Switch>
             );
         }
